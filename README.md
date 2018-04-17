@@ -256,3 +256,6 @@ $ catkin_make
 $ source devel/setup.bash
 $ roslaunch udacity_bot udacity_world.launch
 ```
+<p align="center"> <img src="./misc/robot_1.jpg"> </p>
+
+
