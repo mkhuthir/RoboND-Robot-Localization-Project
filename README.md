@@ -98,3 +98,12 @@ $ nano udacity_world.launch
 </launch>
 ```
 
+Launch it!
+
+```bash
+$ cd ~/catkin_ws/
+$ catkin_make
+$ source devel/setup.bash
+$ roslaunch udacity_bot udacity_world.launch
+```
+
