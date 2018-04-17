@@ -2,6 +2,7 @@
 
 <robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+  <!-- robot_footprint -->
   <link name="robot_footprint"></link>
 
   <joint name="robot_footprint_joint" type="fixed">
@@ -10,6 +11,7 @@
     <child link="chassis" />
   </joint>
 
+  <!-- chassis -->
   <link name='chassis'>
     <pose>0 0 0.1 0 0 0</pose>
 
@@ -37,7 +39,7 @@
       </geometry>
     </visual>
 
-
+    <!-- back_caster_collision -->
     <collision name='back_caster_collision'>
       <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
@@ -62,6 +64,7 @@
       </geometry>
     </visual>
 
+    <!-- front_caster_collision -->
     <collision name='front_caster_collision'>
       <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
@@ -86,6 +89,10 @@
       </geometry>
     </visual>
 
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    
   </link>
 
 </robot>
