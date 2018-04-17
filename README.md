@@ -109,3 +109,108 @@ $ roslaunch udacity_bot udacity_world.launch
 
 <p align="center"> <img src="./misc/empty_world.jpg"> </p>
 
+## Build a very basic mobile robot model
+
+create a new folder in your package directory and an empty xacro file for the robot's URDF description:
+
+```bash
+$ cd ~/catkin_ws/src/udacity_bot/
+$ mkdir urdf
+$ cd urdf
+$ nano udacity_bot.xacro
+```
+
+```xml
+<?xml version='1.0'?>
+
+<robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <link name="robot_footprint"></link>
+
+  <joint name="robot_footprint_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="robot_footprint"/>
+    <child link="chassis" />
+  </joint>
+
+  <link name='chassis'>
+    <pose>0 0 0.1 0 0 0</pose>
+
+    <inertial>
+      <mass value="15.0"/>
+      <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
+      <inertia
+          ixx="0.1" ixy="0" ixz="0"
+          iyy="0.1" iyz="0"
+          izz="0.1"
+      />
+    </inertial>
+
+    <collision name='collision'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/> 
+      <geometry>
+        <box size=".4 .2 .1"/>
+      </geometry>
+    </collision>
+
+    <visual name='chassis_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size=".4 .2 .1"/>
+      </geometry>
+    </visual>
+
+
+    <collision name='back_caster_collision'>
+      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0</mu>
+            <mu2>0</mu2>
+            <slip1>1.0</slip1>
+            <slip2>1.0</slip2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+
+    <visual name='back_caster_visual'>
+      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual>
+
+    <collision name='front_caster_collision'>
+      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0</mu>
+            <mu2>0</mu2>
+            <slip1>1.0</slip1>
+            <slip2>1.0</slip2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+
+    <visual name='front_caster_visual'>
+      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+</robot>
+```
+
