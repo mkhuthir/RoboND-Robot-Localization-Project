@@ -213,4 +213,46 @@ $ nano udacity_bot.xacro
 
 </robot>
 ```
+Create a new launch file that will help load the URDF file
 
+```bash
+$ cd ~/catkin_ws/src/udacity_bot/launch/
+$ nano robot_description.launch
+```
+
+```xml
+<?xml version="1.0"?>
+<launch>
+
+  <!-- send urdf to param server -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find udacity_bot)/urdf/udacity_bot.xacro'" />
+
+</launch>
+```
+
+update udacity_world.launch so that Gazebo can load that URDF (the robot model)
+
+```bash
+$ nano udacity_world.launch
+```
+Add the following to the launch file (after <launch>)
+
+```xml
+<include file="$(find udacity_bot)/launch/robot_description.launch"/>
+```
+Add the following to the launch file (before </launch>)
+
+```xml
+<!--spawn a robot in gazebo world-->
+
+<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" 
+output="screen" args="-urdf -param robot_description -model udacity_bot"/>
+```
+launch everything and check if the robot loads up properly
+
+```bash
+$ cd ~/catkin_ws/
+$ catkin_make
+$ source devel/setup.bash
+$ roslaunch udacity_bot udacity_world.launch
+```
