@@ -107,3 +107,5 @@ $ source devel/setup.bash
 $ roslaunch udacity_bot udacity_world.launch
 ```
 
+<p align="center"> <img src="./misc/empty_world.jpg"> </p>
+
