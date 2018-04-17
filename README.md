@@ -235,12 +235,12 @@ update udacity_world.launch so that Gazebo can load that URDF (the robot model)
 ```bash
 $ nano udacity_world.launch
 ```
-Add the following to the launch file (after <launch>)
+Add the following to the launch file (after `<launch>`)
 
 ```xml
 <include file="$(find udacity_bot)/launch/robot_description.launch"/>
 ```
-Add the following to the launch file (before </launch>)
+Add the following to the launch file (before `</launch>`)
 
 ```xml
 <!--spawn a robot in gazebo world-->
