@@ -144,7 +144,7 @@
 
   <!-- right_wheel -->
     
- <link name="right_wheel">
+  <link name="right_wheel">
 
    <collision name='right_wheel_collision'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
@@ -189,6 +189,80 @@
       <axis xyz="0 1 0" rpy="0 0 0"/>
       <limit effort="10000" velocity="1000"/>
       <joint_properties damping="1.0" friction="1.0"/>
+  </joint>
+
+  <!-- camera -->
+    
+  <link name="camera">
+
+   <collision name='camera_collision'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="0.05"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <inertia
+          ixx="1e-6" ixy="0" ixz="0"
+          iyy="1e-6" iyz="0"
+          izz="1e-6"
+      />
+    </inertial>
+
+    <visual name='camera_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="0.05"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+  <joint type="fixed" name="camera_joint">
+      <origin xyz="0.2 0 0" rpy="0 0 0"/>
+      <child link="camera"/>
+      <parent link="chassis"/>
+      <axis xyz="1 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- hokuyo laser range finder -->
+    
+  <link name="hokuyo">
+
+   <collision name='hokuyo_collision'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="0.1"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <inertia
+          ixx="1e-6" ixy="0" ixz="0"
+          iyy="1e-6" iyz="0"
+          izz="1e-6"
+      />
+    </inertial>
+
+    <visual name='hokuyo_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <mesh filename="package://udacity_bot/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+  <joint type="fixed" name="hokuyo_joint">
+      <origin xyz="0.15 0 0.1" rpy="0 0 0"/>
+      <child link="hokuyo"/>
+      <parent link="chassis"/>
+      <axis xyz="1 0 0" rpy="0 0 0"/>
   </joint>
 
 </robot>
