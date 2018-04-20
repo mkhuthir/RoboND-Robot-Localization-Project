@@ -364,4 +364,56 @@ define the left and right robot wheels by adding the following to URDF file:
 
 <p align="center"> <img src="./misc/robot_2.jpg"> </p>
 
+Add the camera link and a corresponding joint to the end of the URDF file.
+
+```xml
+  <!-- camera -->
+    
+  <link name="camera">
+
+   <collision name='camera_collision'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="0.05"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0</mu>
+            <mu2>0</mu2>
+            <slip1>1.0</slip1>
+            <slip2>1.0</slip2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
+      <inertia
+          ixx="1e-6" ixy="0" ixz="0"
+          iyy="1e-6" iyz="0"
+          izz="1e-6"
+      />
+    </inertial>
+
+    <visual name='camera_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="0.05"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+  <joint type="fixed" name="camera_joint">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <child link="camera"/>
+      <parent link="chassis"/>
+      <axis xyz="0 1 0" rpy="0 0 0"/>
+      <limit effort="10000" velocity="1000"/>
+      <joint_properties damping="1.0" friction="1.0"/>
+  </joint>
+```
 
