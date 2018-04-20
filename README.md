@@ -376,21 +376,11 @@ Add the camera link and a corresponding joint to the end of the URDF file.
       <geometry>
         <box size="0.05"/>
       </geometry>
-      <surface>
-        <friction>
-          <ode>
-            <mu>0</mu>
-            <mu2>0</mu2>
-            <slip1>1.0</slip1>
-            <slip2>1.0</slip2>
-          </ode>
-        </friction>
-      </surface>
     </collision>
 
     <inertial>
       <mass value="0.1"/>
-      <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <inertia
           ixx="1e-6" ixy="0" ixz="0"
           iyy="1e-6" iyz="0"
@@ -408,12 +398,52 @@ Add the camera link and a corresponding joint to the end of the URDF file.
   </link>
 
   <joint type="fixed" name="camera_joint">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0.2 0 0" rpy="0 0 0"/>
       <child link="camera"/>
       <parent link="chassis"/>
-      <axis xyz="0 1 0" rpy="0 0 0"/>
-      <limit effort="10000" velocity="1000"/>
-      <joint_properties damping="1.0" friction="1.0"/>
+      <axis xyz="1 0 0" rpy="0 0 0"/>
   </joint>
 ```
+Add hokuyo sensor to your robot model (URDF file) just like the camera sensor.
+
+```xml
+  <!-- hokuyo laser range finder -->
+    
+  <link name="hokuyo">
+
+   <collision name='hokuyo_collision'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="0.1"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <inertia
+          ixx="1e-6" ixy="0" ixz="0"
+          iyy="1e-6" iyz="0"
+          izz="1e-6"
+      />
+    </inertial>
+
+    <visual name='hokuyo_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <mesh filename="package://udacity_bot/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+  <joint type="fixed" name="hokuyo_joint">
+      <origin xyz="0.15 0 0.1" rpy="0 0 0"/>
+      <child link="hokuyo"/>
+      <parent link="chassis"/>
+      <axis xyz="1 0 0" rpy="0 0 0"/>
+  </joint>
+```
+
+<p align="center"> <img src="./misc/robot_3.jpg"> </p>
 
