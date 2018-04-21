@@ -215,7 +215,7 @@
     <visual name='camera_visual'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
-        <box size="0.05"/>
+        <box size="0.05 0.05 0.05"/>
       </geometry>
     </visual>
 
@@ -232,10 +232,10 @@
     
   <link name="hokuyo">
 
-   <collision name='hokuyo_collision'>
+    <collision name='hokuyo_collision'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
-        <box size="0.1"/>
+        <box size="0.1 0.1 0.1"/>
       </geometry>
     </collision>
 
