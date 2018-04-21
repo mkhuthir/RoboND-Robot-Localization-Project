@@ -404,6 +404,9 @@ Add the camera link and a corresponding joint to the end of the URDF file.
       <axis xyz="1 0 0" rpy="0 0 0"/>
   </joint>
 ```
+<p align="center"> <img src="./misc/robot_3.jpg"> </p>
+
+
 Add hokuyo sensor to your robot model (URDF file) just like the camera sensor.
 
 ```xml
@@ -443,5 +446,5 @@ Add hokuyo sensor to your robot model (URDF file) just like the camera sensor.
   </joint>
 ```
 
-<p align="center"> <img src="./misc/robot_3.jpg"> </p>
+<p align="center"> <img src="./misc/robot_4.jpg"> </p>
 
