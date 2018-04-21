@@ -364,6 +364,9 @@ define the left and right robot wheels by adding the following to URDF file:
 
 <p align="center"> <img src="./misc/robot_2.jpg"> </p>
 
+
+## Add Sensors
+
 Add the camera link and a corresponding joint to the end of the URDF file.
 
 ```xml
@@ -448,6 +451,8 @@ Add hokuyo sensor to your robot model (URDF file) just like the camera sensor.
 
 <p align="center"> <img src="./misc/robot_4.jpg"> </p>
 
+## Add Gazebo Plugins
+
 add the following gazebo plugins by including a gazebo xacro file:
 
 * A plugin for the camera sensor.
@@ -459,3 +464,77 @@ This can be done by adding the following to the top of the file (right before yo
 ```xml
 <xacro:include filename="$(find udacity_bot)/urdf/udacity_bot.gazebo" />
 ```
+## Add RViz
+
+Modify robot_description.launch to add the following after the first “param” definition:
+
+```xml
+<!-- Send fake joint values-->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="false"/>
+  </node>
+
+<!-- Send robot states to tf -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
+```
+
+Add the following at the end of the file. After the `urdf_spawner` node definition.
+
+```xml
+<!--launch rviz-->
+<node name="rviz" pkg="rviz" type="rviz" respawn="false"/>
+```
+
+Launch it!
+
+```bash
+$ cd ~/catkin_ws/
+$ roslaunch udacity_bot udacity_world.launch
+```
+
+This time both Gazebo and RViz should launch up. Once they are loaded -
+
+Select the RViz window, and on the left side, under `Displays`:
+
+Select “**odom**” for fixed frame
+Click the “**Add**” button and
+* add “**RobotModel**”
+* add “**Camera**” and select the Image topic that was defined in the camera gazebo plugin
+* add “**LaserScan**” and select the topic that was defined in the hokuyo gazebo plugin.
+
+Your robot model should load up in RViz.
+
+In Gazebo, click on “**Insert**” and from the list add any item in the world in front of the robot. You should be able to see the item in Rviz in the “Camera” viewer, and the Laser scan of that object as well.
+
+<p align="center"> <img src="./misc/robot_5.jpg"> </p>
+
+## Adding a World
+
+start with creating a new folder in the package directory
+
+```bash
+$ cd ~/catkin_ws/src/udacity_bot/
+$ mkdir maps
+$ cd maps
+```
+
+copy the two files jackal_race.pgm and jackal_race.yaml from: 
+
+https://github.com/udacity/RoboND-Localization-Project
+
+into the “maps” folder.
+
+The map that you will be working with is generated based on its own world.
+
+```bash
+$ cd ..
+$ cd worlds
+```
+
+Copy the file `jackal_race.world` from the project repo into the “worlds” folder
+
+Next, you will have to modify the udacity_world.launch file and update the path to this new map/world.
+
+Modify the argument `world_name` such that it points to `jackal_race.world`. You are now ready to launch your robot in this new map!
+
+
