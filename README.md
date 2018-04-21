@@ -448,3 +448,14 @@ Add hokuyo sensor to your robot model (URDF file) just like the camera sensor.
 
 <p align="center"> <img src="./misc/robot_4.jpg"> </p>
 
+add the following gazebo plugins by including a gazebo xacro file:
+
+* A plugin for the camera sensor.
+* A plugin for the hokuyo sensor.
+* A plugin for controlling the wheel joints.
+
+This can be done by adding the following to the top of the file (right before you define the `robot_footprint` link)
+
+```xml
+<xacro:include filename="$(find udacity_bot)/urdf/udacity_bot.gazebo" />
+```
