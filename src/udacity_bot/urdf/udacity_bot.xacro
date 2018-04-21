@@ -4,8 +4,9 @@
 
 <robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!-- material properties -->
+  <!-- import URDF files -->
   <xacro:include filename="$(find udacity_bot)/urdf/common_properties.xacro"/>
+  <xacro:include filename="$(find udacity_bot)/urdf/udacity_bot.gazebo" />
 
   <!-- robot_footprint -->
   <link name="robot_footprint"></link>
@@ -19,6 +20,13 @@
   <!-- chassis -->
   <link name='chassis'>
     <pose>0 0 0.1 0 0 0</pose>
+
+    <visual name='chassis_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size=".4 .2 .1"/>
+      </geometry>
+    </visual>
 
     <inertial>
       <mass value="15.0"/>
@@ -37,15 +45,15 @@
       </geometry>
     </collision>
 
-    <visual name='chassis_visual'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+    <!-- back_caster_collision -->
+
+    <visual name='back_caster_visual'>
+      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
-        <box size=".4 .2 .1"/>
+        <sphere radius="0.05"/>
       </geometry>
-      <material name="blue"/>
     </visual>
 
-    <!-- back_caster_collision -->
     <collision name='back_caster_collision'>
       <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
@@ -63,15 +71,15 @@
       </surface>
     </collision>
 
-    <visual name='back_caster_visual'>
-      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
+    <!-- front_caster_collision -->
+
+    <visual name='front_caster_visual'>
+      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
         <sphere radius="0.05"/>
       </geometry>
-      <material name="red"/>
     </visual>
 
-    <!-- front_caster_collision -->
     <collision name='front_caster_collision'>
       <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
@@ -89,13 +97,6 @@
       </surface>
     </collision>
 
-    <visual name='front_caster_visual'>
-      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.05"/>
-      </geometry>
-      <material name="red"/>
-    </visual>
   </link>
 
   <!-- left_wheel -->
@@ -134,7 +135,6 @@
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
-      <material name="black"/>
     </visual>
 
   </link>
@@ -185,7 +185,6 @@
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
-      <material name="black"/>
     </visual>
 
   </link>
@@ -225,7 +224,6 @@
       <geometry>
         <box size="0.05 0.05 0.05"/>
       </geometry>
-      <material name="blue"/>
     </visual>
 
   </link>
