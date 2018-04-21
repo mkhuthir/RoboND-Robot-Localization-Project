@@ -508,3 +508,33 @@ In Gazebo, click on “**Insert**” and from the list add any item in the world
 
 <p align="center"> <img src="./misc/robot_5.jpg"> </p>
 
+## Adding a World
+
+start with creating a new folder in the package directory
+
+```bash
+$ cd ~/catkin_ws/src/udacity_bot/
+$ mkdir maps
+$ cd maps
+```
+
+copy the two files jackal_race.pgm and jackal_race.yaml from: 
+
+https://github.com/udacity/RoboND-Localization-Project
+
+into the “maps” folder.
+
+The map that you will be working with is generated based on its own world.
+
+```bash
+$ cd ..
+$ cd worlds
+```
+
+Copy the file `jackal_race.world` from the project repo into the “worlds” folder
+
+Next, you will have to modify the udacity_world.launch file and update the path to this new map/world.
+
+Modify the argument `world_name` such that it points to `jackal_race.world`. You are now ready to launch your robot in this new map!
+
+
