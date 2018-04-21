@@ -391,7 +391,7 @@ Add the camera link and a corresponding joint to the end of the URDF file.
     <visual name='camera_visual'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
-        <box size="0.05"/>
+        <box size="0.05 0.05 0.05"/>
       </geometry>
     </visual>
 
@@ -410,11 +410,10 @@ Add hokuyo sensor to your robot model (URDF file) just like the camera sensor.
   <!-- hokuyo laser range finder -->
     
   <link name="hokuyo">
-
-   <collision name='hokuyo_collision'>
+    <collision name='hokuyo_collision'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
-        <box size="0.1"/>
+        <box size="0.1 0.1 0.1"/>
       </geometry>
     </collision>
 
@@ -434,7 +433,6 @@ Add hokuyo sensor to your robot model (URDF file) just like the camera sensor.
         <mesh filename="package://udacity_bot/meshes/hokuyo.dae"/>
       </geometry>
     </visual>
-
   </link>
 
   <joint type="fixed" name="hokuyo_joint">
