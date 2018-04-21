@@ -151,7 +151,7 @@
       </geometry>
     </visual>
 
-   <collision name='right_wheel_collision'>
+    <collision name='right_wheel_collision'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
