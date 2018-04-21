@@ -5,7 +5,7 @@
 <robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- import URDF files -->
-  <xacro:include filename="$(find udacity_bot)/urdf/common_properties.xacro"/>
+  <!--<xacro:include filename="$(find udacity_bot)/urdf/common_properties.xacro"/>-->
   <xacro:include filename="$(find udacity_bot)/urdf/udacity_bot.gazebo" />
 
   <!-- robot_footprint -->
@@ -103,22 +103,19 @@
  
   <link name="left_wheel">
 
+    <visual name='left_wheel_visual'>
+      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </visual>
+
    <collision name='left_wheel_collision'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
-      <surface>
-        <friction>
-          <ode>
-            <mu>0</mu>
-            <mu2>0</mu2>
-            <slip1>1.0</slip1>
-            <slip2>1.0</slip2>
-          </ode>
-        </friction>
-      </surface>
-    </collision>
+   </collision>
 
     <inertial>
       <mass value="5.0"/>
@@ -129,13 +126,6 @@
           izz="0.1"
       />
     </inertial>
-
-    <visual name='left_wheel_visual'>
-      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
-      <geometry>
-        <cylinder radius="0.1" length="0.05"/>
-      </geometry>
-    </visual>
 
   </link>
 
@@ -153,21 +143,18 @@
     
   <link name="right_wheel">
 
+    <visual name='right_wheel_visual'>
+      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+    </visual>
+
    <collision name='right_wheel_collision'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
-      <surface>
-        <friction>
-          <ode>
-            <mu>0</mu>
-            <mu2>0</mu2>
-            <slip1>1.0</slip1>
-            <slip2>1.0</slip2>
-          </ode>
-        </friction>
-      </surface>
     </collision>
 
     <inertial>
@@ -179,13 +166,6 @@
           izz="0.1"
       />
     </inertial>
-
-    <visual name='right_wheel_visual'>
-      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
-      <geometry>
-        <cylinder radius="0.1" length="0.05"/>
-      </geometry>
-    </visual>
 
   </link>
 
@@ -199,8 +179,14 @@
   </joint>
 
   <!-- camera -->
-    
   <link name="camera">
+
+    <visual name='camera_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </visual>
 
    <collision name='camera_collision'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
@@ -219,13 +205,6 @@
       />
     </inertial>
 
-    <visual name='camera_visual'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/>
-      <geometry>
-        <box size="0.05 0.05 0.05"/>
-      </geometry>
-    </visual>
-
   </link>
 
   <joint type="fixed" name="camera_joint">
@@ -236,8 +215,14 @@
   </joint>
 
   <!-- hokuyo laser range finder -->
-    
   <link name="hokuyo">
+
+    <visual name='hokuyo_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <mesh filename="package://udacity_bot/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
 
     <collision name='hokuyo_collision'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
@@ -255,13 +240,6 @@
           izz="1e-6"
       />
     </inertial>
-
-    <visual name='hokuyo_visual'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/>
-      <geometry>
-        <mesh filename="package://udacity_bot/meshes/hokuyo.dae"/>
-      </geometry>
-    </visual>
 
   </link>
 
