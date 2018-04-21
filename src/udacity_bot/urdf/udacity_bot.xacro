@@ -108,6 +108,7 @@
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
+      <material name="blue"/>
     </visual>
 
    <collision name='left_wheel_collision'>
