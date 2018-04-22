@@ -1,5 +1,10 @@
-TrajectoryPlannerROS:
 
+controller_frequency: 10.0
+
+TrajectoryPlannerROS:
   holonomic_robot:      false
-  controller_frequency: 15.0
   meter_scoring:        true
+  yaw_goal_tolerance:   0.05
+  xy_goal_tolerance:    0.10
+  sim_time:             1.0
+  pdist_scale:          0.6
