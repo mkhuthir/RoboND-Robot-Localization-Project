@@ -10,8 +10,8 @@ odom_alpha4:      0.2
 base_frame_id:    robot_footprint
 global_frame_id:  map
 
-min_particles:    30
-max_particles:    300
+min_particles:    10
+max_particles:    200
 
 initial_pose_x:   0.0
 initial_pose_y:   0.0
