@@ -262,26 +262,24 @@ $ roslaunch udacity_bot udacity_world.launch
 define the left and right robot wheels by adding the following to URDF file:
 
 ```xml
-<!-- left_wheel -->
+  <!-- left_wheel -->
  
   <link name="left_wheel">
+
+    <visual name='left_wheel_visual'>
+      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
 
    <collision name='left_wheel_collision'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
-      <surface>
-        <friction>
-          <ode>
-            <mu>0</mu>
-            <mu2>0</mu2>
-            <slip1>1.0</slip1>
-            <slip2>1.0</slip2>
-          </ode>
-        </friction>
-      </surface>
-    </collision>
+   </collision>
 
     <inertial>
       <mass value="5.0"/>
@@ -292,13 +290,6 @@ define the left and right robot wheels by adding the following to URDF file:
           izz="0.1"
       />
     </inertial>
-
-    <visual name='left_wheel_visual'>
-      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
-      <geometry>
-        <cylinder radius="0.1" length="0.05"/>
-      </geometry>
-    </visual>
 
   </link>
 
@@ -314,23 +305,21 @@ define the left and right robot wheels by adding the following to URDF file:
 
   <!-- right_wheel -->
     
- <link name="right_wheel">
+  <link name="right_wheel">
 
-   <collision name='right_wheel_collision'>
+    <visual name='right_wheel_visual'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder radius="0.1" length="0.05"/>
       </geometry>
-      <surface>
-        <friction>
-          <ode>
-            <mu>0</mu>
-            <mu2>0</mu2>
-            <slip1>1.0</slip1>
-            <slip2>1.0</slip2>
-          </ode>
-        </friction>
-      </surface>
+      <material name="black"/>
+    </visual>
+
+    <collision name='right_wheel_collision'>
+      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
     </collision>
 
     <inertial>
@@ -342,13 +331,6 @@ define the left and right robot wheels by adding the following to URDF file:
           izz="0.1"
       />
     </inertial>
-
-    <visual name='right_wheel_visual'>
-      <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
-      <geometry>
-        <cylinder radius="0.1" length="0.05"/>
-      </geometry>
-    </visual>
 
   </link>
 
@@ -536,5 +518,12 @@ Copy the file `jackal_race.world` from the project repo into the “worlds” fo
 Next, you will have to modify the udacity_world.launch file and update the path to this new map/world.
 
 Modify the argument `world_name` such that it points to `jackal_race.world`. You are now ready to launch your robot in this new map!
+
+## Updated Paramaters files
+
+* local_costmap_params.yaml
+* global_costmap_params.yaml
+* costmap_common_params.yaml
+* base_local_planner_params.yaml
 
 
