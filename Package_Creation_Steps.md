@@ -526,4 +526,3 @@ Modify the argument `world_name` such that it points to `jackal_race.world`. You
 * costmap_common_params.yaml
 * base_local_planner_params.yaml
 
-
