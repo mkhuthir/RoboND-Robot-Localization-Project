@@ -18,13 +18,12 @@
       <rosDebugLevel>na</rosDebugLevel>
       <odometrySource>world</odometrySource>
       <robotBaseFrame>robot_footprint</robotBaseFrame>
-      <!-- next group still showing warning -->
+      <!-- next group are showing warning in Gazebo 9 but it is ok in 7-->
       <legacyMode>false</legacyMode>
       <publishWheelTF>false</publishWheelTF>
       <publishWheelJointState>false</publishWheelJointState>
-      <!-- for some reason this will crash Gazebo >
+      <!-- for some reason this will crash Gazebo 9 but it is ok in 7 -->
       <publishTf>1</publishTf>
-      <-->
     </plugin>
   </gazebo>
 
@@ -48,7 +47,7 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
-        <cameraName>udacity_bot/camera1</cameraName>
+        <cameraName>muth_bot/camera1</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera</frameName>
@@ -93,7 +92,7 @@
         </noise>
       </ray>
       <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
-        <topicName>/udacity_bot/laser/scan</topicName>
+        <topicName>/muth_bot/laser/scan</topicName>
         <frameName>hokuyo</frameName>
       </plugin>
     </sensor>
