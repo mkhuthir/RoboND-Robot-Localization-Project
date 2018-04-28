@@ -519,6 +519,10 @@ Next, you will have to modify the udacity_world.launch file and update the path 
 
 Modify the argument `world_name` such that it points to `jackal_race.world`. You are now ready to launch your robot in this new map!
 
+
+<p align="center"> <img src="./misc/map_1.jpg"> </p>
+<p align="center"> <img src="./misc/map_2.jpg"> </p>
+
 ## Updated Paramaters files
 
 * local_costmap_params.yaml
