@@ -77,12 +77,12 @@ find_package(catkin REQUIRED COMPONENTS
 #   std_msgs  # Or other packages containing msgs
 # )
 
-generate_messages(
-    DEPENDENCIES
-    std_msgs
-    geometry_msgs
-    move_base_msgs
-)
+# generate_messages(
+#    DEPENDENCIES
+#    std_msgs
+#    geometry_msgs
+#    move_base_msgs
+#)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
