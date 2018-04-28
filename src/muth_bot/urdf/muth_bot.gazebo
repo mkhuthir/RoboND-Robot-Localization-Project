@@ -1,12 +1,14 @@
 <?xml version="1.0"?>
 <robot>
-
+    
   <gazebo>
-    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
       <alwaysOn>true</alwaysOn>
-      <updateRate>10</updateRate>
-      <leftJoint>left_wheel_hinge</leftJoint>
-      <rightJoint>right_wheel_hinge</rightJoint>
+      <updateRate>100.0</updateRate>
+      <leftFrontJoint>front_left_wheel_joint</leftFrontJoint>
+      <rightFrontJoint>front_right_wheel_joint</rightFrontJoint>
+      <leftRearJoint>back_left_wheel_joint</leftRearJoint>
+      <rightRearJoint>back_right_wheel_joint</rightRearJoint>
       <wheelSeparation>0.4</wheelSeparation>
       <wheelDiameter>0.2</wheelDiameter>
       <wheelAcceleration>0</wheelAcceleration>
@@ -18,15 +20,17 @@
       <rosDebugLevel>na</rosDebugLevel>
       <odometrySource>world</odometrySource>
       <robotBaseFrame>robot_footprint</robotBaseFrame>
-      <!-- next group are showing warning in Gazebo 9 but it is ok in 7-->
       <legacyMode>false</legacyMode>
       <publishWheelTF>false</publishWheelTF>
       <publishWheelJointState>false</publishWheelJointState>
-      <!-- for some reason this will crash Gazebo 9 but it is ok in 7 -->
       <publishTf>1</publishTf>
+      <covariance_x>0.0001</covariance_x>
+      <covariance_y>0.0001</covariance_y>
+      <covariance_yaw>0.01</covariance_yaw>
+      <topicName>cmd_vel</topicName>
+      <broadcastTF>true</broadcastTF>
     </plugin>
   </gazebo>
-
 
   <gazebo reference="camera">
     <material>Gazebo/Green</material>
