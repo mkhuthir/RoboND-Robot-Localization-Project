@@ -22,9 +22,9 @@
     <pose>0 0 0.1 0 0 0</pose>
 
     <visual name='chassis_visual'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <origin xyz="0 0 0.05" rpy=" 0 0 0"/>
       <geometry>
-        <box size=".4 .2 .1"/>
+        <box size=".4 .2 .15"/>
       </geometry>
       <material name="green"/>
     </visual>
@@ -40,9 +40,9 @@
     </inertial>
 
     <collision name='chassis_collision'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/> 
+      <origin xyz="0 0 0.05" rpy=" 0 0 0"/> 
       <geometry>
-        <box size=".4 .2 .1"/>
+        <box size=".4 .2 .15"/>
       </geometry>
     </collision>
 
@@ -214,7 +214,7 @@
   <link name="camera">
 
     <visual name='camera_visual'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <origin xyz="0 0 0.05" rpy=" 0 0 0"/>
       <geometry>
         <box size="0.05 0.05 0.05"/>
       </geometry>
