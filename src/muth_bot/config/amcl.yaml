@@ -1,11 +1,11 @@
 
 odom_frame_id:    odom
-odom_model_type:  diff-corrected
+odom_model_type:  omni #-corrected
 odom_alpha1:      0.2
 odom_alpha2:      0.2
 odom_alpha3:      0.2
 odom_alpha4:      0.2
-#odom_alpha4:     0.2
+odom_alpha4:      0.2
 
 base_frame_id:    robot_footprint
 global_frame_id:  map
