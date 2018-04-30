@@ -5,10 +5,12 @@
 <robot name="muth_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- import URDF files -->
+
   <xacro:include filename="$(find muth_bot)/urdf/common_properties.xacro"/>
   <xacro:include filename="$(find muth_bot)/urdf/muth_bot.gazebo" />
 
   <!-- robot_footprint -->
+
   <link name="robot_footprint"></link>
 
   <joint name="robot_footprint_joint" type="fixed">
@@ -18,6 +20,7 @@
   </joint>
 
   <!-- chassis -->
+
   <link name='chassis'>
     <pose>0 0 0.1 0 0 0</pose>
 
@@ -47,9 +50,9 @@
     </collision>
 
   </link>
-
+     
   <!-- front_left_wheel -->
- 
+  
   <link name="front_left_wheel">
 
     <visual name='front_left_wheel_visual'>
@@ -87,10 +90,9 @@
       <limit effort="10000" velocity="1000"/>
       <joint_properties damping="1.0" friction="1.0"/>
   </joint>
-
-
+  
   <!-- front_right_wheel -->
-    
+  
   <link name="front_right_wheel">
 
     <visual name='front_right_wheel_visual'>
@@ -128,9 +130,9 @@
       <limit effort="10000" velocity="1000"/>
       <joint_properties damping="1.0" friction="1.0"/>
   </joint>
-
+  
   <!-- back_left_wheel -->
- 
+  
   <link name="back_left_wheel">
 
     <visual name='back_left_wheel_visual'>
@@ -168,10 +170,9 @@
       <limit effort="10000" velocity="1000"/>
       <joint_properties damping="1.0" friction="1.0"/>
   </joint>
-
-
+  
   <!-- back_right_wheel -->
-    
+  
   <link name="back_right_wheel">
 
     <visual name='back_right_wheel_visual'>
@@ -209,8 +210,9 @@
       <limit effort="10000" velocity="1000"/>
       <joint_properties damping="1.0" friction="1.0"/>
   </joint>
-
+    
   <!-- camera -->
+  
   <link name="camera">
 
     <visual name='camera_visual'>
@@ -245,8 +247,9 @@
       <parent link="chassis"/>
       <axis xyz="1 0 0" rpy="0 0 0"/>
   </joint>
-
+  
   <!-- hokuyo laser range finder -->
+  
   <link name="hokuyo">
 
     <visual name='hokuyo_visual'>
@@ -281,5 +284,5 @@
       <parent link="chassis"/>
       <axis xyz="1 0 0" rpy="0 0 0"/>
   </joint>
-
+  
 </robot>

@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <robot>
 
-<!-->    
+<!-- You can use Skid steer instead of planer move using the following plugin -->
+<!-- Dont forget to adjust the amcl.yaml in config folder -->
+<!-->
   <gazebo>
     <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
       <alwaysOn>true</alwaysOn>
