@@ -1,11 +1,19 @@
-# RoboND_Robot_Localization_Project
-ROS Robot Localization Using AMCL ROS Package
+# RoboND Robot Localization Project
+## using AMCL ROS Package
+## (c) Muthanna A. Attyah 
+## May 2018
 
-## installation steps:
 
+## Repository installation steps:
+
+* Clone from git repository
 ```bash
 $ cd ~
 $ git clone https://github.com/mkhuthir/RoboND_Robot_Localization_Project.git catkin_ws
+```
+* Compile code using `catkin_make` and source it.
+
+```bash
 $ cd catkin_ws
 $ catkin_make
 $ source ~/catkin_ws/devel/setup.bash
