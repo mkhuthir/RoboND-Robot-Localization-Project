@@ -256,7 +256,7 @@ $ catkin_make
 $ source devel/setup.bash
 $ roslaunch udacity_bot udacity_world.launch
 ```
-<p align="center"> <img src="./misc/robot_1.jpg"> </p>
+<p align="center"> <img src="./misc/udacity_bot_1.jpg"> </p>
 
 
 define the left and right robot wheels by adding the following to URDF file:
@@ -344,7 +344,7 @@ define the left and right robot wheels by adding the following to URDF file:
   </joint>
 ```
 
-<p align="center"> <img src="./misc/robot_2.jpg"> </p>
+<p align="center"> <img src="./misc/udacity_bot_2.jpg"> </p>
 
 
 ## Add Sensors
@@ -389,7 +389,7 @@ Add the camera link and a corresponding joint to the end of the URDF file.
       <axis xyz="1 0 0" rpy="0 0 0"/>
   </joint>
 ```
-<p align="center"> <img src="./misc/robot_3.jpg"> </p>
+<p align="center"> <img src="./misc/udacity_bot_3.jpg"> </p>
 
 
 Add hokuyo sensor to your robot model (URDF file) just like the camera sensor.
@@ -431,7 +431,7 @@ Add hokuyo sensor to your robot model (URDF file) just like the camera sensor.
   </joint>
 ```
 
-<p align="center"> <img src="./misc/robot_4.jpg"> </p>
+<p align="center"> <img src="./misc/udacity_bot_4.jpg"> </p>
 
 ## Add Gazebo Plugins
 
@@ -531,5 +531,6 @@ Modify the argument `world_name` such that it points to `jackal_race.world`. You
 * costmap_common_params.yaml
 * base_local_planner_params.yaml
 
+## Launching the package
 
 <p align="center"> <img src="./misc/udacity_bot_6.jpg"> </p>
