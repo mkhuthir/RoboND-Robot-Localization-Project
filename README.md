@@ -8,6 +8,7 @@ $ cd ~
 $ git clone https://github.com/mkhuthir/RoboND_Robot_Localization_Project.git catkin_ws
 $ cd catkin_ws
 $ catkin_make
+$ source ~/catkin_ws/devel/setup.bash
 ```
 
 <p align="center"> <img src="./misc/robot_4.jpg"> </p>
