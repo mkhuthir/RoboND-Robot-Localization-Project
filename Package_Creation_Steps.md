@@ -488,7 +488,7 @@ Your robot model should load up in RViz.
 
 In Gazebo, click on “**Insert**” and from the list add any item in the world in front of the robot. You should be able to see the item in Rviz in the “Camera” viewer, and the Laser scan of that object as well.
 
-<p align="center"> <img src="./misc/robot_5.jpg"> </p>
+<p align="center"> <img src="./misc/udacity_bot_5.jpg"> </p>
 
 ## Adding a World
 
@@ -525,8 +525,11 @@ Modify the argument `world_name` such that it points to `jackal_race.world`. You
 
 ## Updated Paramaters files
 
+* amcl.yaml
 * local_costmap_params.yaml
 * global_costmap_params.yaml
 * costmap_common_params.yaml
 * base_local_planner_params.yaml
 
+
+<p align="center"> <img src="./misc/udacity_bot_6.jpg"> </p>
