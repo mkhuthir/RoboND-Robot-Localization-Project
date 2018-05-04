@@ -531,6 +531,30 @@ Modify the argument `world_name` such that it points to `jackal_race.world`. You
 * costmap_common_params.yaml
 * base_local_planner_params.yaml
 
-## Launching the package
+## Launching udacity_bot Packages
+
+* if you want to launch empty world with only the robot use the following:
+
+```bash
+$ roslaunch udacity_bot udacity_empty_world.launch
+```
+* to launch the simulated robot along with amcl package in jackal race world, run the following commands each in a separate terminal window.
+
+To launch jackal race world
+
+```bash
+$ roslaunch udacity_bot udacity_world.launch
+```
+To start amcl node
+
+```bash
+$ roslaunch udacity_bot amcl.launch
+```
+To send 2d navigation goal
+
+```bash
+$ rosrun udacity_bot navigation_goal
+```
+Below is screen capture after robot reachs goal.
 
 <p align="center"> <img src="./misc/udacity_bot_6.jpg"> </p>
