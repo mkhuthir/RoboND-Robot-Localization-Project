@@ -4,6 +4,10 @@
 ## May 2018
 
 
+## Creating a new ROS package from scratch
+If you would like to create the simulated robot package from scratch please see steps on th following file:
+[udacity_bot package creation steps](udacity_bot_creation_steps.md)
+
 ## Repository installation steps:
 
 * Clone from git repository
@@ -32,19 +36,28 @@ $ source ~/catkin_ws/devel/setup.bash
 
 ## Launching udacity_bot Packages
 
+* if you want to launch empty world with only the robot use the following:
+
 ```bash
 $ roslaunch udacity_bot udacity_empty_world.launch
 ```
+* to launch the simulated robot along with amcl package in jackal race world, run the following commands each in a separate terminal window.
+
+To launch jackal race world
+
 ```bash
 $ roslaunch udacity_bot udacity_world.launch
 ```
+To start amcl node
+
 ```bash
 $ roslaunch udacity_bot amcl.launch
 ```
+To send 2d navigation goal
+
 ```bash
 $ rosrun udacity_bot navigation_goal
 ```
-
 ## udacity_bot creation steps
 
 <p align="center"> <img src="./misc/udacity_bot_1.jpg"> </p>
@@ -56,22 +69,34 @@ $ rosrun udacity_bot navigation_goal
 
 ## udacity_bot Test Video
 
+Below is the recorded test video
+
+[![test video](http://img.youtube.com/vi/lxxqGsvKArw/0.jpg)](http://www.youtube.com/watch?v=lxxqGsvKArw)
+
 ## Launching muth_bot Packages
+
+* if you want to launch empty world with only the robot use the following:
 
 ```bash
 $ roslaunch muth_bot muth_empty_world.launch
 ```
+* to launch the simulated robot along with amcl package in jackal race world, run the following commands each in a separate terminal window.
+
+To launch jackal race world
+
 ```bash
 $ roslaunch muth_bot muth_world.launch
 ```
+To start amcl node
+
 ```bash
 $ roslaunch muth_bot amcl.launch
 ```
+To send 2d navigation goal
+
 ```bash
 $ rosrun muth_bot goto_goal
 ```
-
-[![test video](http://img.youtube.com/vi/lxxqGsvKArw/0.jpg)](http://www.youtube.com/watch?v=lxxqGsvKArw)
 
 ## muth_bot creation steps
 
@@ -83,5 +108,7 @@ $ rosrun muth_bot goto_goal
 <p align="center"> <img src="./misc/muth_bot_6.jpg"> </p>
 
 ## muth_bot Test Video
+
+Below is the recorded test video
 
 [![test video](http://img.youtube.com/vi/ODnIm-24Zgw/0.jpg)](http://www.youtube.com/watch?v=ODnIm-24Zgw)
