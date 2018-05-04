@@ -439,6 +439,42 @@ Add the camera link and a corresponding joint to the end of the URDF file.
 
 <p align="center"> <img src="./misc/udacity_bot_4.jpg"> </p>
 
+### add material colors:
+
+update urdf file to include the following:
+
+```xml
+<robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- import URDF files -->
+  <xacro:include filename="$(find udacity_bot)/urdf/common_properties.xacro"/>
+```
+material inlucde file is as following:
+
+```xml
+<?xml version="1.0" ?>
+
+<robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <material name="black">
+      <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+
+  <material name="blue">
+    <color rgba="0.0 0.0 1.0 1.0"/>
+  </material>
+
+  <material name="green">
+    <color rgba="0.0 1.0 0.0 1.0"/>
+  </material>
+
+  <material name="red">
+    <color rgba="1.0 0.0 0.0 1.0"/>
+  </material>
+  
+</robot>
+```
+
 ## Add Gazebo Plugins
 
 add the following gazebo plugins by including a gazebo xacro file:
@@ -564,3 +600,8 @@ $ rosrun udacity_bot navigation_goal
 Below is screen capture after robot reachs goal.
 
 <p align="center"> <img src="./misc/udacity_bot_6.jpg"> </p>
+
+### Test video
+
+[![test video](http://img.youtube.com/vi/lxxqGsvKArw/0.jpg)](http://www.youtube.com/watch?v=lxxqGsvKArw)
+
