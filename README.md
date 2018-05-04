@@ -115,6 +115,8 @@ $ rosrun muth_bot goto_goal
 
 ## muth_bot creation steps
 
+To create this bot package from scatch you can follow same steps as explained above with some differences in gazebo plugins and config files.
+
 ### Robot chassis:
 
 <p align="center"> <img src="./misc/muth_bot_1.jpg"> </p>
