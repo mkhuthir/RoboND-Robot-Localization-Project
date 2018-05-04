@@ -60,33 +60,31 @@ $ rosrun udacity_bot navigation_goal
 ```
 ## udacity_bot creation steps
 
-Robot chassis alone:
+### Robot chassis with casters:
 
 <p align="center"> <img src="./misc/udacity_bot_1.jpg"> </p>
 
-Robot chassis with wheels:
+### Robot chassis with wheels:
 
 <p align="center"> <img src="./misc/udacity_bot_2.jpg"> </p>
 
-Robot chassis + wheels + camera sensor:
+### Robot chassis + wheels + camera sensor:
 
 <p align="center"> <img src="./misc/udacity_bot_3.jpg"> </p>
 
-Robot chassis + wheels + camera sensor + laser finder sensor:
+### Robot chassis + wheels + camera sensor + laser finder sensor:
 
 <p align="center"> <img src="./misc/udacity_bot_4.jpg"> </p>
 
-Full robot model with material colors in RViz:
+### Full robot model with material colors in RViz:
 
 <p align="center"> <img src="./misc/udacity_bot_5.jpg"> </p>
 
-Robot after reaching goal in jackal race world.
+### Robot after reaching goal in jackal race world.
 
 <p align="center"> <img src="./misc/udacity_bot_6.jpg"> </p>
 
-## udacity_bot Test Video
-
-Below is the recorded test video
+### Test video
 
 [![test video](http://img.youtube.com/vi/lxxqGsvKArw/0.jpg)](http://www.youtube.com/watch?v=lxxqGsvKArw)
 
@@ -117,18 +115,30 @@ $ rosrun muth_bot goto_goal
 
 ## muth_bot creation steps
 
+### Robot chassis:
+
 <p align="center"> <img src="./misc/muth_bot_1.jpg"> </p>
+
+### Robot chassis with wheels:
+
 <p align="center"> <img src="./misc/muth_bot_2.jpg"> </p>
+
+### Robot chassis + wheels + camera sensor:
+
 <p align="center"> <img src="./misc/muth_bot_3.jpg"> </p>
+
+### Robot chassis + wheels + camera sensor + laser finder sensor:
+
 <p align="center"> <img src="./misc/muth_bot_4.jpg"> </p>
+
+### Full robot model with material colors in RViz:
+
 <p align="center"> <img src="./misc/muth_bot_5.jpg"> </p>
 
-Robot after reaching goal in jackal race world.
+### Robot after reaching goal in jackal race world.
 
 <p align="center"> <img src="./misc/muth_bot_6.jpg"> </p>
 
-## muth_bot Test Video
-
-Below is the recorded test video
+### Test video
 
 [![test video](http://img.youtube.com/vi/ODnIm-24Zgw/0.jpg)](http://www.youtube.com/watch?v=ODnIm-24Zgw)
