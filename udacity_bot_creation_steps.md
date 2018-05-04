@@ -125,6 +125,7 @@ $ nano udacity_bot.xacro
 
 <robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+  <!-- robot_footprint -->
   <link name="robot_footprint"></link>
 
   <joint name="robot_footprint_joint" type="fixed">
@@ -133,8 +134,17 @@ $ nano udacity_bot.xacro
     <child link="chassis" />
   </joint>
 
+  <!-- chassis -->
   <link name='chassis'>
     <pose>0 0 0.1 0 0 0</pose>
+
+    <visual name='chassis_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size=".4 .2 .1"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
 
     <inertial>
       <mass value="15.0"/>
@@ -153,30 +163,7 @@ $ nano udacity_bot.xacro
       </geometry>
     </collision>
 
-    <visual name='chassis_visual'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/>
-      <geometry>
-        <box size=".4 .2 .1"/>
-      </geometry>
-    </visual>
-
-
-    <collision name='back_caster_collision'>
-      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.05"/>
-      </geometry>
-      <surface>
-        <friction>
-          <ode>
-            <mu>0</mu>
-            <mu2>0</mu2>
-            <slip1>1.0</slip1>
-            <slip2>1.0</slip2>
-          </ode>
-        </friction>
-      </surface>
-    </collision>
+    <!-- back_caster_collision -->
 
     <visual name='back_caster_visual'>
       <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
@@ -185,10 +172,10 @@ $ nano udacity_bot.xacro
       </geometry>
     </visual>
 
-    <collision name='front_caster_collision'>
-      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
+    <collision name='back_caster_collision'>
+      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.05"/>
+        <sphere radius="0.0499"/>
       </geometry>
       <surface>
         <friction>
@@ -202,6 +189,8 @@ $ nano udacity_bot.xacro
       </surface>
     </collision>
 
+    <!-- front_caster_collision -->
+
     <visual name='front_caster_visual'>
       <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
@@ -209,11 +198,28 @@ $ nano udacity_bot.xacro
       </geometry>
     </visual>
 
+    <collision name='front_caster_collision'>
+      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.0499"/>
+      </geometry>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0</mu>
+            <mu2>0</mu2>
+            <slip1>1.0</slip1>
+            <slip2>1.0</slip2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+
   </link>
 
 </robot>
 ```
-Create a new launch file that will help load the URDF file
+### Create a new launch file that will help load the URDF file
 
 ```bash
 $ cd ~/catkin_ws/src/udacity_bot/launch/
@@ -230,7 +236,7 @@ $ nano robot_description.launch
 </launch>
 ```
 
-update udacity_world.launch so that Gazebo can load that URDF (the robot model)
+### update udacity_world.launch so that Gazebo can load that URDF (the robot model)
 
 ```bash
 $ nano udacity_world.launch
@@ -240,7 +246,7 @@ Add the following to the launch file (after `<launch>`)
 ```xml
 <include file="$(find udacity_bot)/launch/robot_description.launch"/>
 ```
-Add the following to the launch file (before `</launch>`)
+### Add the following to the launch file (before `</launch>`)
 
 ```xml
 <!--spawn a robot in gazebo world-->
@@ -259,7 +265,7 @@ $ roslaunch udacity_bot udacity_world.launch
 <p align="center"> <img src="./misc/udacity_bot_1.jpg"> </p>
 
 
-define the left and right robot wheels by adding the following to URDF file:
+### define the left and right robot wheels by adding the following to URDF file:
 
 ```xml
   <!-- left_wheel -->
@@ -392,7 +398,7 @@ Add the camera link and a corresponding joint to the end of the URDF file.
 <p align="center"> <img src="./misc/udacity_bot_3.jpg"> </p>
 
 
-Add hokuyo sensor to your robot model (URDF file) just like the camera sensor.
+### Add hokuyo sensor to your robot model (URDF file) just like the camera sensor.
 
 ```xml
   <!-- hokuyo laser range finder -->
