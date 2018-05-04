@@ -60,11 +60,28 @@ $ rosrun udacity_bot navigation_goal
 ```
 ## udacity_bot creation steps
 
+Robot chassis alone:
+
 <p align="center"> <img src="./misc/udacity_bot_1.jpg"> </p>
+
+Robot chassis with wheels:
+
 <p align="center"> <img src="./misc/udacity_bot_2.jpg"> </p>
+
+Robot chassis + wheels + camera sensor:
+
 <p align="center"> <img src="./misc/udacity_bot_3.jpg"> </p>
+
+Robot chassis + wheels + camera sensor + laser finder sensor:
+
 <p align="center"> <img src="./misc/udacity_bot_4.jpg"> </p>
+
+Full robot model with material colors in RViz:
+
 <p align="center"> <img src="./misc/udacity_bot_5.jpg"> </p>
+
+Robot after reaching goal in jackal race world.
+
 <p align="center"> <img src="./misc/udacity_bot_6.jpg"> </p>
 
 ## udacity_bot Test Video
@@ -105,6 +122,9 @@ $ rosrun muth_bot goto_goal
 <p align="center"> <img src="./misc/muth_bot_3.jpg"> </p>
 <p align="center"> <img src="./misc/muth_bot_4.jpg"> </p>
 <p align="center"> <img src="./misc/muth_bot_5.jpg"> </p>
+
+Robot after reaching goal in jackal race world.
+
 <p align="center"> <img src="./misc/muth_bot_6.jpg"> </p>
 
 ## muth_bot Test Video
