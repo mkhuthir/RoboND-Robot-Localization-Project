@@ -3,6 +3,8 @@
 ## (c) Muthanna A. Attyah 
 ## May 2018
 
+## Project Report in PDF format:
+[Project Report](udacity-robond-robot.pdf)
 
 ## Creating a new ROS package from scratch
 If you would like to create the simulated robot package from scratch please see steps on th following file:
